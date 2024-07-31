@@ -1,0 +1,10 @@
+configuration {
+    // General Settings
+    modi: "run,drun,ssh";
+    font: "JetBrains Mono 12";
+    lines: 5;
+    width: 20%;
+    padding: 5px;
+}
+
+@theme "/home/raceer/.local/share/rofi/themes/rounded-gray-dark.rasi"
