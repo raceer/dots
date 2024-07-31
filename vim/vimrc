@@ -1,0 +1,68 @@
+" Internal Settings Start
+
+	" Autosave files
+autocmd TextChanged,TextChangedI *.py silent write
+
+	" Display row number
+set number
+
+	" Copy yanked text to clipboard
+set clipboard^=unnamed
+" set clipboard^=unnamedplus
+
+	" Set tab widht to 4 spaces
+set tabstop=4
+set shiftwidth=4
+
+	" Word wrap by words, not characters
+set wrap linebreak 
+
+	" Relative Line Numbers
+set number
+set relativenumber
+
+syntax on
+
+" Internal Settings End
+
+
+" Plugins
+
+
+	" Omnisearch Start
+
+" filetype plugin on
+" set omnifunc=syntaxcomlete#Complete
+
+	" Omnisearch End
+
+
+	" Vundle Start
+
+set nocompatible " be improved, required
+filetype off "required
+
+		" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+
+		" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+		" Add plugins here:
+Plugin 'davidhalter/jedi-vim'
+
+		" All my plugins must be added before this line
+call vundle#end() 
+filetype plugin indent on
+
+	" Vundle End
+
+
+
+	" Jedi Start
+
+set completeopt=menuone,longest,preview,noinsert
+
+	" Jedi End
