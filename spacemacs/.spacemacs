@@ -585,6 +585,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq org-edit-src-content-indentation 0)
+  (setq org-hide-leading-stars t)
   )
 
 
