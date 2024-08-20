@@ -255,8 +255,9 @@ mode "launcher" {
 bindsym $mod+x mode "system commands"
 mode "system commands" {
 	bindsym u exec shutdown now
+	bindsym x exec systemctl poweroff -i
 	bindsym o exec swaymsg exit
-	bindsym n exec systemctl suspend && swaylock --color=000000; $def
+	bindsym --no-repeat n exec systemctl suspend && swaylock --color=000000
 	bindsym l exec swaylock --color=000000; $def
 	bindsym q [class=".*"] kill; $def
 
@@ -306,10 +307,16 @@ mode "workspace" {
 # assign [class="Protonvpn-app"] 10
 # assign [class="obsidian"] 2
 
-exec --nostartup-id autotiling
-exec_always "setxkbmap -model pc104 -layout us,fi -variant ,, -option grp:win_space_toggle"
+# exec --nostartup-id autotiling
+input * {
+	xkb_layout eurkey
+}
 
+# exec_always "setxkbmap -model pc104 -layout us,fi,eurkey -variant ,, -option grp:win_space_toggle"
 
+#input {
+#	xkb_layout = eu
+#}
 # focus_follows_mouse no
 
 ## Unsorted
