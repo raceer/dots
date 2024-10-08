@@ -11,6 +11,7 @@
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
+(setq doom-font "Consola Mono")
 ;; - `doom-font' -- the primary font to use
 ;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
 ;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
@@ -40,7 +41,6 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -75,36 +75,14 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :height 150)
 
 
-;; (setq org-format-latex-options
-;;      '(:scale 1.5))  ; Increase the scale factor as needed
+(setq evil-shift-width 4)
 
-(add-hook 'org-mode-hook 'org-fragtog-mode)
+(setq display-line-numbers-type 'relative)
 
-(require 'org)
+;;;; Require
 
-;; (setq org-habit-show-habits-only-for-today t)  ; Show habits for tomorrow
-
-
-(require 'org-habit)
-(add-to-list 'org-modules 'org-habit)
-;; (setq org-habit-show-all-today t)
-
-
-(setq org-elp-split-fraction 0.2)
-(setq org-elp-buffer-name "*Equation Live*")
-(setq org-elp-idle-time 0.5)
-
-;; (after! org
-  ;; (setq org-modules '(org-habit))
-;; )
-
-;; (require 'org-habit)
-
-(setq org-goto-interface (quote outline-path-completion))
-
-(setq org-clock-sound "~/010_Downloads/400_mp3/alarm_sound.mp3")
-
-(require 'org-checklist)
+;; Load other personal config files
+(load "~/.dots/doom_emacs/.config/doom/org-config.el")

@@ -50,3 +50,10 @@
 ;; (unpin! t)
 
 (package! org-fragtog)
+;; (package! org-super-agenda)
+;; (package! org-modern) boot times are awful
+
+;; (package! mermaid-mode)
+
+;; (package! dbml-mode)
+(package! atomic-chrome)
