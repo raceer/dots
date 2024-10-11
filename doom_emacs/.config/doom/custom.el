@@ -5,7 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(auth-source-save-behavior nil)
  '(org-agenda-files
-   '("~/11_Syncthing/40_Notes/42_Org/gtd.org" "/home/raceer/11_Syncthing/40_Notes/51_Programs/20240923_TypingBook/typing_book.org" "/home/raceer/11_Syncthing/40_Notes/42_Org/personal.org"))
+   '("/home/raceer/11_Syncthing/40_Notes/42_Org/gtd.org" "/home/raceer/11_Syncthing/40_Notes/51_Programs/20240923_TypingBook/typing_book.org"))
+ '(org-stuck-projects '("+LEVEL=2|3/-DONE" ("TODO" "NEXT" "NEXTACTION") nil ""))
  '(package-selected-packages '(dbml-mode org-fragtog)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -7,7 +7,7 @@
 (require 'org-habit)
 (add-to-list 'org-modules 'org-habit)
 ;;;; My Variables
-(setq my-org-exclude-project-todo "-{^_.*}")
+(setq my-org-exclude-project-todo "+LEVEL=1")
 (setq my-org-agenda-gtd-filepath "~/11_Syncthing/40_Notes/42_Org/gtd.org")
 (setq my-org-file-path "~/11_Syncthing/40_Notes/42_Org/")
 (setq my-org-agenda-path "~/11_Syncthing/40_Notes/42_Org/")
@@ -59,13 +59,16 @@
             tags-todo (concat my-org-exclude-project-todo "/SMDY")
             ((org-agenda-files my-org-agenda-files)))
            ("gs" "Scheduled"
-            tags-todo (concat my-org-exclude-project-todo "/SCHD")
+            tags-todo (concat "/SCHD")
+            ((org-agenda-files my-org-agenda-files)))
+           ("gi" "Idea"
+            tags-todo (concat my-org-exclude-project-todo "/IDEA")
             ((org-agenda-files my-org-agenda-files)))
            ("gu" "Useful"
-            tags-todo (concat my-org-exclude-project-todo "-@today/-DONE-PROJ-SCHD-SMDY")
+            tags-todo (concat my-org-exclude-project-todo "/-DONE-IDEA-PROJ-SCHD-SMDY")
             ((org-agenda-files my-org-agenda-files)))
            ("gx" "Today"
-            tags-todo "@today"
+            tags-todo "@today+LEVEL=1"
             ((org-agenda-files my-org-agenda-files)))
            ("gd" "Done/Canceled"
             tags "/DONE|CANC"

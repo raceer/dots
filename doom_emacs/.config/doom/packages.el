@@ -57,3 +57,5 @@
 
 ;; (package! dbml-mode)
 (package! atomic-chrome)
+
+(package! olivetti)

@@ -12,6 +12,7 @@
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 (setq doom-font "Consola Mono")
+;; (setq doom-font "DejaVu Serif")
 ;; - `doom-font' -- the primary font to use
 ;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
 ;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
@@ -81,6 +82,10 @@
 (setq evil-shift-width 4)
 
 (setq display-line-numbers-type 'relative)
+
+(setq olivetti-body-width 0.6)
+(global-set-key (kbd "<f9>") 'olivetti-mode)
+
 
 ;;;; Require
 
