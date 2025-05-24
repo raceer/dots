@@ -1,4 +1,7 @@
 " Internal Settings Start
+source ~/.vim/autoload/plug.vim
+source ~/.vim/plugins.vim
+source ~/.vim/keybindings/general.vim
 
 	" Autosave files
 autocmd TextChanged,TextChangedI *.py silent write
@@ -7,8 +10,8 @@ autocmd TextChanged,TextChangedI *.py silent write
 set number
 
 	" Copy yanked text to clipboard
-set clipboard^=unnamed
-" set clipboard^=unnamedplus
+" set clipboard^=unnamed
+set clipboard=unnamedplus
 
 	" Set tab widht to 4 spaces
 set tabstop=4
@@ -21,7 +24,13 @@ set wrap linebreak
 set number
 set relativenumber
 
+nnoremap k kzz
+nnoremap j jzz
+
 syntax on
+" filetype plugin indent on
+filetype plugin on
+" autocmd FileType vim setlocal commentstring="\ %s"
 
 " Internal Settings End
 
@@ -39,30 +48,5 @@ syntax on
 
 	" Vundle Start
 
-set nocompatible " be improved, required
-filetype off "required
-
-		" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-
-		" Let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-		" Add plugins here:
-Plugin 'davidhalter/jedi-vim'
-
-		" All my plugins must be added before this line
-call vundle#end() 
-filetype plugin indent on
-
-	" Vundle End
-
-
-
-	" Jedi Start
-
-set completeopt=menuone,longest,preview,noinsert
-
-	" Jedi End
+" set nocompatible " be improved, required
+" filetype off "required

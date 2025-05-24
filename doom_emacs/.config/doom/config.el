@@ -11,7 +11,8 @@
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
-(setq doom-font "Consola Mono")
+(setq doom-font "JetBrains Mono")
+;; (setq doom-font "Consola Mono")
 ;; (setq doom-font "DejaVu Serif")
 ;; - `doom-font' -- the primary font to use
 ;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
@@ -34,7 +35,9 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+;; (setq doom-theme 'doom-one)
+;; (setq doom-theme 'doom-monokai-pro)
+(setq doom-theme 'net-gruvbox)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -86,8 +89,50 @@
 (setq olivetti-body-width 0.6)
 (global-set-key (kbd "<f9>") 'olivetti-mode)
 
-
 ;;;; Require
 
+(org-super-agenda-mode)
 ;; Load other personal config files
 (load "~/.dots/doom_emacs/.config/doom/org-config.el")
+
+
+(setq org-roam-directory "/home/raceer/11_Syncthing/40_Notes/42_Org/roam")
+
+(setq org-roam-completion-everywhere nil)
+
+(setq which-key-use-C-h-commands t)
+
+;; Ensure LSP is configured to use Pyright
+;; (after! lsp-mode
+;;   (setq lsp-python-ms-executable (executable-find "pyright"))
+;;   (setq lsp-enable-symbol-highlighting t)
+;;   (setq lsp-enable-file-watchers t))
+;;
+(after! lsp-mode
+    (setq lsp-pyright-langserver-command "pyright")
+    (setq lsp-enable-symbol-highlighting t)
+    (setq lsp-enable-file-watchers t))
+
+(map! "C-/" #'comment-line)
+
+(use-package! gptel
+  :config
+  (setq! gptel-api-key (getenv "OPENAI_API_KEY"))
+  (setq gptel-default-mode 'org-mode))
+
+;; (map! "C-n" #'evil-next-visual-line)
+;;       ;; "C-p" #'evil-previous-visual-line)
+
+;; (define-key evil-normal-state-map (kbd "C-p") 'evil-previous-visual-line)
+;; (define-key evil-normal-state-map (kbd "C-n") 'evil-next-visual-line)
+
+(after! evil
+    (map! :map evil-normal-state-map
+        "C-n" #'evil-next-visual-line
+        "C-p" #'evil-previous-visual-line))
+
+
+(use-package nand-hdl-mode
+  :load-path "~/.config/emacs/modules/lang/nand-hdl-mode")
+
+(visual-line-mode 1)

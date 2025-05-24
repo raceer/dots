@@ -59,3 +59,14 @@
 (package! atomic-chrome)
 
 (package! olivetti)
+
+
+(package! org-super-agenda)
+
+(unpin! org-roam)
+(package! org-roam-ui)
+(package! websocket)
+(package! org-download)
+
+(package! gptel)
+(package! fireplace)
