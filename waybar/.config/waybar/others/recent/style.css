@@ -1,0 +1,184 @@
+
+@define-color bg #252D28;
+@define-color bg2 rgba(0, 0, 0, 0);
+@define-color trnsp rgba(0, 0, 0, 0);
+@define-color fg #EBDBB2;
+@define-color text #fff4d2;
+
+* {
+  min-height: 0;
+  font-family:
+    JetBrains Mono NL,
+    JetBrainsMonoNerd Font;
+  font-size: 18px;
+  font-weight: 900;
+  background: @bg;
+  color: @bg;
+  opacity: 1;
+}
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  /* background-color: #1e1e2e; */
+  /* background-color: #181825; */
+  background: @bg;
+  color: @bg;
+}
+
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+.modules-right {
+  background: @bg;
+  border-radius: 0px 0px 0px 0px;
+}
+
+
+#workspaces {
+  background: @bg;
+  /* border-radius: 15px; */
+  border: 0px;
+  font-style: normal;
+  opacity: 1;
+  font-size: 16px;
+  color: @fg;
+}
+
+#workspaces button {
+  min-width: 20px;
+  border: 0px;
+  color: @fg;
+  /* background-color: #1e1e1e; */
+  background-color: @bg;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+#workspaces button.active {
+  color: @bg;
+  background: @fg;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+#workspaces button:hover{
+  color: @bg;
+  background: @fg;
+  transition: all 0.1s ease-in-out;
+  opacity: 1;
+}
+
+#workspaces button.urgent {
+  background-color: #ff441f;
+}
+
+#mpris {
+  color: @fg;
+  /* font-size: 10; */
+  /* background: @fg; */
+  border-radius: 15px;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+#mpris:hover {
+  color: @bg;
+  background: @fg;
+  border-radius: 25px;
+  padding: 0px 15px;
+  opacity: 1;
+}
+
+#tray {
+  padding: 0px 10px;
+  padding-right: 15px;
+  background: @bg;
+  border-radius: 0px;
+}
+
+#bluetooth, #pulseaudio, #clock, #battery, #network, #language {
+  color: @fg;
+  padding: 0px 15px;
+  /* font-size: 10; */
+  background: @bg;
+  border-radius: 15px 15px 0px 0px;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+#bluetooth:hover, #pulseaudio:hover, #clock:hover, #battery:hover, #network:hover, #mpris:hover, #language:hover {
+  color: @bg;
+  background: @fg;
+  border-radius: 15px 15px 0px 0px;
+  /* padding: 0px 15px; */
+  opacity: 1;
+}
+
+#clock,
+#pulseaudio,
+#battery,
+#cpu,
+#memory,
+#window {
+  padding: 0px 10px;
+  margin: 3px 3px;
+  color: @fg;
+  border-radius: 15px;
+  /* border-radius: 200px; */
+  background-color: @bg;
+}
+#custom-logo {
+  padding: 0px 10px;
+  color: @fg;
+  /* background-color: @bg; */
+  font-size: 30;
+}
+
+#tray {
+  font-size: 10px;
+}
+
+#custom-sep {
+  padding: 0px;
+  color: #585b70;
+}
+
+#custom-spotify.playing {
+  color: #a6e3a1;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#cpu {
+  color: @fg;
+}
+
+#memory {
+  color: @fg;
+}
+
+#clock.date {
+  color: @fg;
+}
+
+#window {
+  color: #a6e3a1;
+}
+
+#pulseaudio.muted {
+  color: #ff5b45;
+}
+
+/* #logo { */
+/*   color: @fg; */
+/* } */
+
+tooltip {
+  border-radius: 25px;
+}
+
