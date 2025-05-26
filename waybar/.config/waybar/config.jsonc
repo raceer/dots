@@ -1,13 +1,13 @@
 {
   "layer": "top",
   "position": "bottom",
-  "height": 16,
+  "height": 0,
   "spacing": 0,
   "exclusive": true,
   "gtk-layer-shell": true,
   "passthrough": false,
   "fixed-center": true,
-  "modules-left": ["custom/logo", "hyprland/workspaces"],
+  "modules-left": ["custom/logo", "hyprland/workspaces", "hyprland/submap"],
   "modules-right": ["bluetooth", "network", "pulseaudio", "battery", "clock", "tray"],
   // "modules-right": ["cpu", "memory", "pulseaudio", "battery", "clock", "tray"],
   "modules-center": ["mpris"],
@@ -64,11 +64,12 @@
       "car": "",
       "default": [" ", " ", " "]
     },
+    "scroll-step": 5,
     "on-click": "pavucontrol",
     "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
   },
   "custom/logo": {
-    "format": "",
+    "format": "",
     "tooltip": false
   },
 
@@ -112,6 +113,32 @@
   "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
 },
 
+"hyprland/workspaces": {
+	"format": "{icon}",
+	// "format": "{name}: {icon}",
+	"format-icons": {
+		"1": "",
+		"2": "",
+		"3": "",
+		"4": "",
+		"5": "",
+    "6": "",
+    "7": "",
+    "8": "",
+    "9": "",
+    "10": "",
+		//"active": "",
+		"default": ""
+	},
+},
+
+"hyprland/submap": {
+	"format": "mode: {} ",
+	"tooltip": false,
+  "justify": "center",
+},
+
+
 "bluetooth": {
 	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
 	"format": "",
@@ -135,6 +162,7 @@
 	"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
 	"tooltip-format-ethernet": "{ifname} ",
 	"tooltip-format-disconnected": "Disconnected",
-	"max-length": 50
+	"max-length": 50,
+  "on-click": "~/.config/waybar/scripts/wifi.sh"
 }
 }

@@ -1,26 +1,26 @@
 sort=-time
 layer=overlay
-background-color=#252D28bb
-text-color=#fff4d2ff
+background-color=#282828ff
+text-color=#ebdbb2ff
 width=420
 height=120
 border-size=3
-border-color=#fff4d2ff
-border-radius=12
+border-color=#a89984
+border-radius=0
 icons=0
 max-icon-size=64
-default-timeout=5000
+default-timeout=7000
 ignore-timeout=0
 font="JetBrains Mono" 14
 margin=12
 padding=12,20
 
 [urgency=low]
-border-color=#aaaaaaaa
+border-color=#a89984
 
 [urgency=normal]
-border-color=#fff4d2aa
+border-color=#458588
 
 [urgency=critical]
-border-color=#bf616a
+border-color=#cc241d
 default-timeout=0

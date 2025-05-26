@@ -1,25 +1,19 @@
+@import "colors.css";
 
 * {
   min-height: 0;
   font-family:
     JetBrains Mono NL,
     JetBrainsMonoNerd Font;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 900;
 }
 
-@define-color bg #252D28;
-@define-color bg2 rgba(0, 0, 0, 0);
-@define-color trnsp rgba(0, 0, 0, 0);
-@define-color fg #EBDBB2;
-@define-color text #fff4d2;
 
 window#waybar {
   transition-property: background-color;
-  transition-duration: 0.5s;
-  /* background-color: #1e1e2e; */
-  /* background-color: #181825; */
-  background-color: @bg2;
+  /* transition-duration: 0.5s; */
+  background-color: @bg;
 }
 
 window#waybar.hidden {
@@ -27,71 +21,70 @@ window#waybar.hidden {
 }
 
 .modules-right {
-  background: @bg;
-  border-radius: 15px 0px 0px 0px;
+  /* background: @fg; */
+  /* border-radius: 15px 0px 0px 0px; */
+}
+
+.modules-left {
+background: @bg;
 }
 
 
 #workspaces {
-  background: @bg;
-  margin: 2px 1px 3px 1px;
-  padding: 0px 0px;
-  margin: 5px 5px;
-  border-radius: 15px;
+  /* background: @fg; */
+  /* margin: 2px 1px 3px 1px; */
+  /* padding: 0px 0px; */
+  /* margin: 5px 5px; */
+  /* border-radius: 15px; */
   border: 0px;
   font-style: normal;
   opacity: 1;
-  font-size: 16px;
-  color: @fg;
+  /* font-size: 16px; */
+  color: @bg;
 }
 
 #workspaces button {
-  padding: 1px 10px;
-  margin: 3px 3px;
-  min-width: 25px;
-  border-radius: 15px;
-  border: 0px;
+  /* padding: 1px 10px; */
+  /* margin: 3px 3px; */
+  min-width: 20px;
+  /* border-radius: px; */
+  /* animation: gradient_f 20s ease-in infinite; */
+  /* border: 0px; */
+  border-radius: 0px;
   color: @fg;
-  /* background-color: #1e1e1e; */
   background-color: @bg;
-  /* background-color: rgba(0, 0, 0, 0.2); */
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
+  /* background: @bg; */
+}
+
+
+
+#workspaces button:hover {
+  color: @bg;
+  background: @fg;
+  transition: all 0.0s ease-in-out;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
 }
 
 #workspaces button.active {
   color: @bg;
   background: @fg;
-  border-radius: 15px;
-  min-width: 35px;
-  transition: all 0.2s ease-in-out;
   opacity: 1;
-}
-
-#workspaces button:hover{
-  color: @bg;
-  background: @fg;
-  transition: all 0.1s ease-in-out;
-  opacity: 1;
-}
-
-#workspaces button.urgent {
-  background-color: #ff441f;
 }
 
 #mpris {
   color: @fg;
-  /* font-size: 10; */
-  /* background: @fg; */
-  border-radius: 15px;
+  /* border-radius: 15px; */
   opacity: 1;
-  transition: all 0.2s ease-in-out;
+  /* transition: all 0.2s ease-in-out; */
 }
 
 #mpris:hover {
   color: @bg;
   background: @fg;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   padding: 0px 15px;
   opacity: 1;
 }
@@ -103,42 +96,44 @@ window#waybar.hidden {
   border-radius: 0px;
 }
 
-#bluetooth, #pulseaudio, #clock, #battery, #network, #language {
+#bluetooth, #pulseaudio, #clock, #battery, #network, #language{
   color: @fg;
   padding: 0px 15px;
-  /* font-size: 10; */
   background: @bg;
-  border-radius: 15px 15px 0px 0px;
+  /* border-radius: 15px 15px 0px 0px; */
   opacity: 1;
-  transition: all 0.2s ease-in-out;
+  /* transition: all 0.2s ease-in-out; */
 }
 
 #bluetooth:hover, #pulseaudio:hover, #clock:hover, #battery:hover, #network:hover, #mpris:hover, #language:hover {
   color: @bg;
   background: @fg;
-  border-radius: 15px 15px 0px 0px;
-  /* padding: 0px 15px; */
+  /* border-radius: 15px 15px 0px 0px; */
   opacity: 1;
 }
 
 #clock,
 #pulseaudio,
-#battery,
+/* #battery.charging { */
+/*   color: @green; */
+/* }, */
 #cpu,
 #memory,
 #window {
-  padding: 0px 10px;
-  margin: 3px 3px;
+  /* padding: 0px 10px; */
+  /* margin: 3px 3px; */
   color: @fg;
-  border-radius: 15px;
-  /* border-radius: 200px; */
+  /* border-radius: 15px; */
   background-color: @bg;
 }
 #custom-logo {
   padding: 0px 10px;
   color: @fg;
-  /* background-color: @bg; */
   font-size: 30;
+}
+
+#tray {
+  font-size: 10px;
 }
 
 #tray {
@@ -178,11 +173,21 @@ window#waybar.empty #window {
   color: #ff5b45;
 }
 
-/* #logo { */
-/*   color: @fg; */
-/* } */
-
 tooltip {
-  border-radius: 25px;
+  /* border-radius: 25px; */
+  background: @bg;
+  color: @fg;
 }
 
+#custom-logo {
+  color: @fg;
+  font-size: 29px;
+}
+
+#submap {
+  color: @bg;
+  background-color: @yellow;
+  padding-left: 10px;
+  min-width: 20px;
+  /* text-align: justify; */
+}

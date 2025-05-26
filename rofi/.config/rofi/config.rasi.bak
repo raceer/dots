@@ -104,33 +104,34 @@ configuration {
     }
 
 	/*---------- Keybindings ----------*/
-/*
+
 	kb-primary-paste: "Control+V,Shift+Insert";
 	kb-secondary-paste: "Control+v,Insert";
 	kb-clear-line: "Control+w";
 	kb-move-front: "Control+a";
 	kb-move-end: "Control+e";
-	kb-move-word-back: "Alt+b,Control+Left";
-	kb-move-word-forward: "Alt+f,Control+Right";
+	kb-move-word-back: "Alt+l,Control+Left";
+	kb-move-word-forward: "Alt+h,Control+Right";
 	kb-move-char-back: "Left,Control+b";
 	kb-move-char-forward: "Right,Control+f";
 	kb-remove-word-back: "Control+Alt+h,Control+BackSpace";
 	kb-remove-word-forward: "Control+Alt+d";
 	kb-remove-char-forward: "Delete,Control+d";
 	kb-remove-char-back: "BackSpace,Shift+BackSpace,Control+h";
-	kb-remove-to-eol: "Control+k";
+	kb-remove-to-eol: "";
 	kb-remove-to-sol: "Control+u";
-	kb-accept-entry: "Control+j,Control+m,Return,KP_Enter";
+	kb-accept-entry: "Control+l,Return,KP_Enter";
 	kb-accept-custom: "Control+Return";
 	kb-accept-custom-alt: "Control+Shift+Return";
 	kb-accept-alt: "Shift+Return";
 	kb-delete-entry: "Shift+Delete";
 	kb-mode-next: "Shift+Right,Control+Tab";
 	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";
-	kb-mode-complete: "Control+l";
+	kb-mode-complete: "";
 	kb-row-left: "Control+Page_Up";
 	kb-row-right: "Control+Page_Down";
-	kb-row-down: "Down,Control+n";
+	kb-row-down: "Down,Control+j";
+	kb-row-up: "Control+k";
 	kb-page-prev: "Page_Up";
 	kb-page-next: "Page_Down";
 	kb-row-first: "Home,KP_Home";
@@ -177,5 +178,9 @@ configuration {
 	me-select-entry: "MousePrimary";
 	me-accept-entry: "MouseDPrimary";
 	me-accept-custom: "Control+MouseDPrimary";
-*/
+
 }
+
+
+@import "~/.config/rofi/launchers/type-6/style-4.rasi"
+
